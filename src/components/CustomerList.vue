@@ -193,6 +193,8 @@
       deleteCustomer(customer) {
         apiService.deleteCustomer(customer.pk).then(response => {
           if (response.status === 204) {
+            alert("Customer deleted");
+            this.showMsg = 'deleted';
             router.push('/customer-list/deleted/')
             this.getCustomers()
           }

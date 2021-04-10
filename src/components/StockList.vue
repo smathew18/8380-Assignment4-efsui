@@ -203,8 +203,10 @@
       deleteStock(stock) {
         apiService.deleteStock(stock.pk).then(response => {
           if (response.status === 204) {
-           router.push('/stock-list/deleted/')
-           this.getStocks()
+           alert("Stock deleted");
+           this.showMsg = 'deleted';
+           router.push('/stock-list/deleted/');
+           this.getStocks();
           }
         }).catch(error => {
           if (error.response.status === 401) {
