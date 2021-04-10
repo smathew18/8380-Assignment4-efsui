@@ -205,6 +205,7 @@
       deleteFund(fund) {
         apiService.deleteFund(fund.pk).then(response => {
           if (response.status === 204) {
+           alert("Fund deleted");
            this.showMsg = 'deleted';
            router.push('/fund-list/deleted/');
            this.getFunds();

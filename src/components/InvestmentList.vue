@@ -191,6 +191,7 @@
       deleteInvestment(investment) {
         apiService.deleteInvestment(investment.pk).then(response => {
           if (response.status === 204) {
+            alert("Investment deleted");
             this.showMsg = 'deleted';
             router.push('/investment-list/deleted/')
             this.getInvestments()
